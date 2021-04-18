@@ -1,0 +1,60 @@
+\chapter{Мера}
+\section{Первые определения}
+\begin{definition}
+	Пусть $X$~-- множество, $\mathcal{A}\subseteq\mathcal{P}(X)$.\marginnote{Напомню, что символом $\mathcal{P}(X)$ обозначается множество всех подмножеств $X$.} {\bf Мера}~--- это функция $\mu\colon\mathcal{A}\to[0,+\infty]$, обладающая свойством {\bf аддитивности}: если $A=\bigsqcup_{i=1}^NA_j, A_j\in\mathcal{A}$, то $\mu(A)=\sum_{i=1}^N\mu(A_i)$.
+\end{definition}
+Это первое "рабочее" определение меры. Впоследствии оно будет меняться, где-то мы будем его ослаблять, где-то усиливать. Например, когда-нибудь может понадобиться изменение условия на область значений:
+\begin{itemize}
+	\item[$[0,+\infty)$] конечная мера
+	\item[$\mathbb{R}$] Вещественная мера ("заряд")
+	\item[$\mathbb{C}$] Комплексная мера
+\end{itemize}
+\begin{example}
+	$\mathcal{A}_0$~-- множество всех конечных отрезков\marginnote{напомню, что у нас отрезками называются множества $\langle a,b\rangle,a\le b$, без любых ограничений на принадлежность концов}, $f\colon\mathbb{R}\to\mathbb{R}$~-- возрастающая функция. Тогда {\it квазидлина} $l_f\colon\langle a,b\rangle\mapsto f(b)-f(a)\colon\mathcal{A}_0\to\mathbb{R}_{\ge0}$~-- мера. Аддитивность очевидна: если $a_0=a\le a_1\le\ldots\le a_n=b$, то $l_f(\langle a,b\rangle)=\sum_{i=1}^{n}l_f(\langle a_{i-1},a_i\rangle)=f(a_n)-f(a_0)$.
+
+	При $f\colon x\mapsto x$ получается обычная длина.
+\end{example}
+\begin{example}
+	Обычную длину можно считать мерой, заданной на множестве {\it всех} отрезков\marginnote{и бесконечных тоже}: $l(I)=+\infty$, если $I$~-- луч или $\mathbb{R}$. Тогда для конечных отрезков все то же самое, а для бесконечных отрезков заметим, что если они представляются в виде объединения, то одно из объединяемых множеств будет бесконечно.
+\end{example}
+\begin{example}
+	$P(\mathbb{R}^n)=\{I_1\times\cdots\times I_n|I_i\in\mathcal{A}\}$ \marginnote{Или $P_0(\mathbb{R}^n)$ и $\mathcal{A}_0$ соотвественно}~--- совокупность всех прямоугольных параллелепипедов (со сторонами, параллельными осям). $l_P(I_1\times\cdots I_n)=\prod_{i=1}^{n}l(I_i)$. Длины могут быть бесконечными, поэтому считаем, что $+\infty\cdot0=0$, $+\infty\cdot x=+\infty, x>0$, $+\infty\cdot+\infty=+\infty$.
+
+	Это действительно мера, но доказывать мы это пока не будем, а потом докажем общее утверждение.
+\end{example}
+
+\begin{example}[Считающая мера]
+	Если есть функция $\phi\colon X\to\mathbb{R}_{\ge0}$, то можно определить меру как $A\mapsto\sum_{a\in A}\phi(a)$.
+
+	Ее частный случай, когда $\phi\equiv 1$:
+	$$A\mapsto\begin{cases}
+	|A| & A\text{ конечно,}\\
+	+\infty &\text{иначе}
+	\end{cases}$$
+\end{example}
+\section{(Полу)кольца, алгебры}
+\begin{definition}
+	$\mathcal{A}\subseteq\mathcal{P}(X)$ называют {\bf кольцом}\marginnote{Правильнее было бы называть ее {\it алгеброй множеств}, но так почему-то не делают}, если это множество замкнуто относительно конечных объединений, пересечений, и разности. $\mathcal{A}$ называют {\bf алгеброй}, если это кольцо и $X\in\mathcal{A}$.
+	\marginnote{
+		\begin{example}
+			Очевидные примеры: множество конечных подмножеств $X$~-- кольцо, $\mathcal{P}(X)$~-- алгебра.
+		\end{example}
+	}
+\end{definition}
+Непустое кольцо содержит пустое множество: $A\in\mathcal{A}\Rightarrow \varnothing=A\smallsetminus A\in\mathcal{A}$.
+
+\begin{definition}
+	$\mathcal{A}\subseteq\mathcal{P}(X)$ называют {\bf полукольцом}, если\marginnote{Заметим, что если выполнены условия 1,2, то условие 3 можно проверять только для $A,B\colon B\subseteq A$, так как $A\smallsetminus B=A\smallsetminus (A\cap B)$}
+	\begin{enumerate}
+		\item $\varnothing\in\mathcal{A}$
+		\item $A,B\in\mathcal{A}\Rightarrow A\cap B\in\mathcal{A}$
+		\item $A,B\in\mathcal{A}\Rightarrow A\smallsetminus B=\bigsqcup_{i=1}^n C_i, C_i\in\mathcal{A}$
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	$\mathcal{A}\subseteq\mathcal{P}(X),\mathcal{B}\subseteq\mathcal{P}(Y)$~--- полукольца. Тогда $C=\{A\times B|A\in\mathcal{A}, B\in\mathcal{B}\}$~-- полукольцо в $X\times Y$.
+\end{theorem}
+\begin{proof}
+
+\end{proof}
